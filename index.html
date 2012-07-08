@@ -1,0 +1,370 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Cloud Concepts</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="Judson Flamm" />
+        <link href="css/impress.css" rel="stylesheet" />
+        <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+		<p class="fallback-message">
+		    Your browser doesn't support impress.js.  Try Chrome or Safari.
+		</p>
+		<div id="impress">
+
+			<div id="title" class="step invisible" data-x="0" data-y="0">
+			    <h1>Cloud Concepts</h1>
+			    <h3>Understanding Cloud Architecture Concepts</h3>
+			    <h5>By Judson Flamm</h5>
+			</div>
+
+			<div class="step" data-rotate-x="90" data-y="0" data-x="0">
+                <ul>
+                    <li>Global</li>
+                    <li>Virtual Machines</li>
+                    <li>Masterless Clustering</li>
+                    <li>Message Queues</li>
+                    <li>Data Caching</li>
+                    <li>NoSQL</li>
+                    <li>Configuration</li>
+                    <li>Deployment</li>
+                    <li>Monitoring / Analytics</li>
+                </ul>
+			</div>
+
+            <div class="step invisible" data-rotate-x="90" data-x="-50" data-y="0" data-scale=".5">
+                <h2 style="text-align: right">Global</h2>
+            </div>
+
+            <div class="step invisible">
+                <h3>Global Reasoning:</h3>
+                <ul>
+                    <li>Performance for a Global Audience</li>
+                    <li>Geographic Fault Tolerance</li>
+                </ul>
+            </div>
+
+            <div class="step invisible">
+                <h3>Global ~ Multi-Datacenter</h3>
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/DNS.png">
+                <h5 style="text-align: right">Global Starts with DNS</h5>
+            </div>
+
+            <div class="step invisible">
+                <h3>Datacenter Collaboration Strategies</h3>
+                <ul>
+                    <li>Independent vs. Logically Clustered</li>
+                </ul>
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/DC1.png">
+                <h5 style="text-align: right">Independent Datacenters</h5>
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/DC2.png">
+                <h5 style="text-align: right">Logically Clustered Datacenters</h5>
+            </div>
+
+            <div class="step invisible" data-rotate-x="90" data-x="-50" data-y="0" data-scale=".5">
+                <h2 style="text-align: right">Virtual Machines</h2>
+            </div>
+
+            <div class="step invisible">
+                <h3>Thinking Shift...</h3>
+                <p style="text-align: right">VM's are Disposable!</p>
+            </div>
+
+            <div class="step invisible">
+                <h3>Focus on the VM Image...</h3>
+                <ul>
+                    <li>Temporary</li>
+                    <li>Multi-Node</li>
+                    <li>Lane Specific or Generic?</li>
+                    <li>Software Installed</li>
+                    <li>VM Identity</li>
+                </ul>
+            </div>
+
+            <div class="step invisible">
+                <h3>Fault Tolerance Within a Cluster</h3>
+                Expecting VM's to fail, leaves you in a good place when they do
+            </div>
+
+            <div class="step invisible">
+                <h3>Auto Scalability</h3>
+                Spin up more VM's as load demands
+            </div>
+
+            <div class="step invisible">
+                <h3>Q:</h3>
+                Won't I loose my data when a VM fails or is disposed of?
+                <h3>A:</h3>
+                Abstract the traditional data that resides on a server, away from the single server
+                <h5>Move everything <i>specific</i> off of the server!</h5>
+            </div>
+
+            <div class="step invisible">
+                <h3>VM Instance Data Options</h3>
+                <ul>
+                    <li>Local Instance Storage</li>
+                    <li>Persistent, SAN Storage</li>
+                    <li>Databases (diverse variety)</li>
+                </ul>
+            </div>
+
+            <div class="step invisible" data-rotate-x="90" data-x="-50" data-y="0" data-scale=".5">
+                <h2 style="text-align: right">Masterless Clustering</h2>
+            </div>
+
+            <div class="step invisible">
+                <h3>Masterless Clustering</h3>
+                Each node is capable of all functions
+                <h5>Eliminates Excess Coordination Servers</h5>
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/Masterless1.png">
+                <h5 style="text-align: right">Mastered Clustering</h5>
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/Masterless2.png">
+                <h5 style="text-align: right">Masterless Clustering</h5>
+            </div>
+
+            <div class="step invisible">
+                <h3>Just One Problem:</h3>
+                <p style="padding-left: 200px">No Task Master</p>
+                <h3>Solutions:</h3>
+                <p>
+                    <ul>
+                        <li style="padding-left: 200px">Lockable Datastore</li>
+                        <li style="padding-left: 200px">Message Queues</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="step invisible" data-rotate-x="90" data-x="-50" data-y="0" data-scale=".5">
+                <h2 style="text-align: right">Message Queues</h2>
+            </div>
+
+            <div class="step invisible">
+                <h3>4 Systems Collaboration</h3>
+                <h5>and sometimes humans too</h5>
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/Message1.png">
+                <h5 style="text-align: right">'Fan' Message Publication</h5>
+            </div>
+
+            <div class="step invisible">
+                <h3>Message Subscription Types</h3>
+                <ul>
+                    <li>Live Only (while available)</li>
+                    <li>Persistent / ALL (stored while unavailable)</li>
+                </ul>
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/Message2.png">
+                <h5 style="text-align: right">Sometimes Messages are Actually Jobs</h5>
+            </div>
+
+            <div class="step invisible">
+                <h3>Protocols</h3>
+                <ul>
+                    <li>Standard: AMQP</li>
+                    <li>Custom: WebSockets, REST</li>
+                    <li>Noteworthy: Redis </li>
+                </ul>
+            </div>
+
+            <div class="step invisible" data-rotate-x="90" data-x="-50" data-y="0" data-scale=".5">
+                <h2 style="text-align: right">Data Caching</h2>
+            </div>
+
+            <div class="step invisible">
+                <h3>Dynamic Data Can Be Slow</h3>
+                <h3>Disk Based Datastores Are Slow Too</h3>
+                <h5>Caches are Aimed At These Problems</h5>
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/Cache1.png">
+                <h5 style="text-align: right">Central Cache</h5>
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/Cache2.png">
+                <h5 style="text-align: right">Distributed Cache</h5>
+            </div>
+
+            <div class="step invisible">
+                <h3>Many Technology Approaches</h3>
+                <h5>Usually In-Memory, Sometimes Persistent</h5>
+                <ul>
+                    <li>Memcached</li>
+                    <li>Redis</li>
+                    <li>NoSQL's in General...</li>
+                </ul>
+            </div>
+
+            <div class="step invisible" data-rotate-x="90" data-x="-50" data-y="0" data-scale=".5">
+                <h2 style="text-align: right">NoSQL</h2>
+            </div>
+
+            <div class="step invisible">
+                <h3>NoSQL & VMs</h3>
+                Have fueled what we know as "The Cloud" today
+            </div>
+
+            <div class="step invisible">
+                <h3>Key Points:</h3>
+                <p>Sharded / In-Memory Datasets & Indexes</p>
+                <p>Simple Key / Value Pairs of Data</p>
+                <p>No Joins to Slow Down the Data Fetches</p>
+            </div>
+
+            <div class="step invisible">
+                <h3>SQL vs NoSQL</h3>
+                <img src="images/Sql-vs-Mongo-Inserts.png"/>
+                Though B-Tree based SQL DBs have achieved some of these feats.  Their throughput is dismal comparatively.
+                <h6><a href="http://blog.michaelckennedy.net/2010/04/22/the-nosql-movement-linq-and-mongodb-oh-my/">source:blog.michaelckennedy.net</a></h6>
+            </div>
+
+            <div class="step invisible">
+                <h3>What You Trade</h3>
+                Transactions / Atomic Writes
+                <h3>For</h3>
+                Speed & Eventual Consistency
+            </div>
+
+            <div class="step invisible">
+                <h3>Sharding & Replication</h3>
+                <p>Master / Slave (Atomic Writes)</p>
+                <p>vs.</p>
+                <p>Dynamo Ring / Masterless (Eventualy Consistent)</p>
+            </div>
+
+            <div class="step invisible">
+                <h3>Technology Popularity</h3>
+                <img style="margin-top: 15px;" src="images/linked_NOSQL.png"/>
+                <h6><a href="http://blogs.the451group.com/information_management/2012/03/27/update-on-the-relative-popularity-of-nosql-database-skills/">source:blog.the451group.com</a></h6>
+            </div>
+
+            <div class="step invisible" data-rotate-x="90" data-x="-50" data-y="0" data-scale=".5">
+                <h2 style="text-align: right">Configuration</h2>
+            </div>
+
+            <div class="step invisible">
+                <h3>Dynamic VM Configuration</h3>
+                Configure your VM Images to Obtain their configuration from a central source
+            </div>
+
+            <div class="step invisible">
+                <h3>VM Attributes</h3>
+                <ul>
+                    <li>Identity</li>
+                    <li>Purpose</li>
+                    <li>Cluster</li>
+                    <li>Lane</li>
+                </ul>
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/Config.png">
+                <h5 style="text-align: right">Dynamic Configuration</h5>
+            </div>
+
+            <div class="step invisible">
+                <h3>VM Setup</h3>
+                <ul>
+                    <li>Install and Setup Software</li>
+                    <li>Deploy Applications</li>
+                    <li>Join Cluster Groups</li>
+                </ul>
+            </div>
+
+            <div class="step invisible" data-rotate-x="90" data-x="-50" data-y="0" data-scale=".5">
+                <h2 style="text-align: right">Deployment</h2>
+            </div>
+
+            <div class="step invisible">
+                <h3>Manual or Automated Deploys?</h3>
+                Regardless... neither should ever bring an app down&darr;
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/Deploy.png">
+                <h5 style="text-align: right">Incremental Deployment</h5>
+            </div>
+
+            <div class="step invisible" data-rotate-x="90" data-x="-50" data-y="0" data-z="30" data-scale=".5">
+                <h2 style="text-align: right">Monitoring / Analytics</h2>
+            </div>
+
+            <div class="step invisible">
+                <img style="margin: 15px 0px 0px 80px; border: solid 5px #444;" src="images/logs.png"/>
+                <h5 style="text-align: right;">Server Logs are Crude</h5>
+            </div>
+
+            <div class="step invisible">
+                <h3>All In One Place</h3>
+                We need all of the data relevant to Operations, Errors, Performance, Feature Usage, Health Checks in one place...
+            </div>
+
+            <div class="step invisible">
+                <img style="border: solid 5px black; height: 90%; width:90%;" src="images/Monitoring.png">
+                <h5 style="text-align: right">Unified Monitoring / Analytics Data</h5>
+            </div>
+
+            <div class="step invisible">
+                <h3>Who Should Use Monitoring / Analytics?</h3>
+                <ul>
+                    <li>Operations</li>
+                    <li>Auto Scaling</li>
+                    <li>Developers</li>
+                    <li>Product Owners</li>
+                    <li>Everyone</li>
+                </ul>
+            </div>
+
+            <div class="step invisible">
+                <h3>Querying & Reporting</h3>
+                To be Fully Utilized, Monitoring / Analytics data needs to be easily accessible
+            </div>
+
+            <div class="step invisible" data-rotate-x="90" data-x="0" data-y="0" data-scale="1.4">
+                <div style="margin: 0px 0px 0px 500px;">
+                    <br/><br/><br/><br/><br/>
+                    <h6>Thanks!</h6>
+                    <h4>Judson Flamm</h4>
+                    <h5>+Judd Flamm</h5>
+                </div>
+            </div>
+
+		</div>
+    <script type="text/javascript" src="js/impress.js"></script>
+    <script>
+    	impress().init();
+
+//        el.addEventListener("impress:stepenter", function (event) {
+//            var slideId = event.target.id;
+//
+//            if (slideId == "showConcepts") {
+//                $("#"+slideId).removeClass("invisible");
+//            }
+//            $("#"+slideId).removeClass("invisible");
+//            $(".step").not("#"+slideId).addClass("invisible");
+//        }, false);
+
+    </script>
+    </body>
+</html>
